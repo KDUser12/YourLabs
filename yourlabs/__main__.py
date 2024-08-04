@@ -14,11 +14,11 @@ Released under the MIT License
 """
 
 import logging
-import logging.handlers
 import os
 
 from utils._os import check_os_compatibility
 from utils.env import check_python_version
+from utils.packages import check_and_install_dependencies
 
 # Configure logging
 LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO').upper()
@@ -43,3 +43,6 @@ if __name__ == '__main__':
         logging.error(f"Error: {error}")
         exit(1)
         
+    check_and_install_dependencies(['requirements.txt'])
+    
+    
