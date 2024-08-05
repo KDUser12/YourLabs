@@ -51,4 +51,7 @@ if __name__ == '__main__':
         
     check_and_install_dependencies(['requirements.txt'])
     
+    import core
+    core.Yourlabs(args.debug)
+    
     
