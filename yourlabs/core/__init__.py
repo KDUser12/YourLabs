@@ -13,15 +13,15 @@ class Yourlabs:
         self.current_version = __version__
         self.latest_version = check_versions("yourlabs", self.current_version)
         
-        operating_system = platform.system()
-        python_version = '.'.join(map(str, sys.version_info[:3]))
-        current_time = datetime.datetime.now()
+        self.operating_system = platform.system()
+        self.python_version = '.'.join(map(str, sys.version_info[:3]))
+        self.current_time = datetime.datetime.now()
         
         self.clear_output()
         
-        print(f"YourLabs - {self.current_version}{" [DEBUG-MODE]" if debug else ""} (main, {calendar.month_abbr[current_time.month]}"
-              f" {current_time.day} {current_time.year}, {current_time.hour}:{current_time.minute}) [Python {python_version}] on {operating_system}\nFor more information " 
-              f"enter \"help\", \"license\" or \"credit\".\n")
+        print(f"YourLabs - {self.current_version}{" [DEBUG-MODE]" if debug else ""} (main, {calendar.month_abbr[self.current_time.month]}"
+              f" {self.current_time.day} {self.current_time.year}, {self.current_time.hour}:{self.current_time.minute}) [Python "
+              f"{self.python_version}] on {self.operating_system}\nFor more information enter \"help\", \"license\" or \"credit\".\n")
         
         if self.latest_version:
             print("Install the latest YourLabs for new features and improvements! https://github.com/KDUser12/YourLabs/releases/latest\n")
